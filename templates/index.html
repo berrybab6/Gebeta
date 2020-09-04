@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	 <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome4/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-social/bootstrap-social.css' %}">
+
+    <title>Gebeta Restaurant</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<a class="navbar-brand mr-auto" href="#">
+			<img src="{% static 'img/logo1.jpg' %}" height="30" width="41"></a>
+			<div class="collapse navbar-collapse" id="Navbar">
+				
+			
+			  <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="."><span class="fa fa-home"></span> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus"><span class="fa fa-info"></span> About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list"></span> Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+            </ul>
+		</div>
+		</div>
+		
+	</nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+            	<div class="col-12 col-sm-6">
+                    <h1>Gebeta Restaurant</h1>
+                    <p>We take inspiration from the World's best cuisines, and create a unique  experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                </div>
+                <div class="col-12 col-sm align-self-center">
+                	<img src="{% static 'img/logo1.jpg' %}" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+  
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>Our Traditional Food </h3>
+            </div>
+            
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                	<img src="{{ food.F_img.url }}" height="90" width="100" alt="{{fo.F_name}}" class="d-flex mr-3 img-thumbnail align-self-center">
+               <div class="media-body"> 	 
+                	 <h2 class="mt-0">{{food.F_name}}</h2>
+                <p class="d-none d-sm-block">{{food.F_desc}}</p>
+            </div>
+                
+                </div>
+               
+            </div>
+        </div>
+
+
+     
+
+       <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>This Month's Promotion </h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                	<img src="{{foodProm.F_img.url}}" height="80" width="100" alt="{{foodProm.F_name}}" class="d-flex mr-3 img-thumbnail align-self-center">
+               <div class="media-body"> 	 
+                	 <h2 class="mt-0">Weekly Grand Buffet</h2>
+                	 <h2 class="mt-0">{{foodProm.F_name}}</h2>
+                <p class="d-none d-sm-block"> {{foodProm.F_desc}}</p>
+                
+                	 <h4>{{foodProm.price}}<small> birr</small> </h4>
+                
+            </div>
+                
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>chef of The Month </h3>
+            </div>
+            <div class="col col-sm order-sm-first col-md">
+                <div class="media">
+                	<img src="{{ chief.chief_img.url }}" height="70" width="100" alt="Genfo" class="d-flex mr-3 img-thumbnail align-self-center">
+               <div class="media-body"> 	 
+                	 <h2 class="mt-0">{{chief.chief_name}}</h2>
+                	 <h4>{{chief.role}}</h4>
+                <p class="d-none d-sm-block">{{chief.description}}</p>
+            </div>
+                
+                </div>
+               
+            </div>
+        </div>
+
+
+    </div>
+
+  <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+                      121, Clear Water Bay Road<br>
+                      Clear Water Bay, Kowloon<br>
+                      HONG KONG<br>
+                      <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+                      <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+                      <i class="fa fa-envelope fa-lg"></i>: 
+                      <a href="mailto:confusion@food.net">confusion@food.net</a>
+                   </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
+           </div>
+        </div>
+    </footer>   
+    <!-- jquery library and bootstrap.min-->
+<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
