@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Comment
 
 # Create your views here.
@@ -14,17 +14,21 @@ def contact(request):
         tel_email=request.POST["Tel_email"]
 
         tel_num="+"+ areacode+ " "+tel_number
-        if approve==True:
+        if approve=="approve":
             if tel_email=="tel":
                 tel_email="tel"
+            
             else:
                 tel_email="email"
-            return tel_email
+            approve=True
+            return tel_email,approve
         else:
             tel_email=None
+            approve=False
+            
         comment = Comment(first_name=f_name, last_name=l_name,tel_number=tel_num,email=email,contact_me=approve,contact_me_by=tel_email,feedback=feedback)
 
         comment.save()
-
-
-    return render(request,"contactus.html")
+        return redirect('/')
+    else:
+        return render(request,"contactus.html")

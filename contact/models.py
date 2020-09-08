@@ -7,7 +7,7 @@ class Comment(models.Model):
     
     tel_number=models.CharField(max_length=16)
     email=models.EmailField()
-    contact_me=models.BooleanField()
-    contact_me_by=models.CharField(max_length=100)
+    contact_me=models.BooleanField(default=False)
+    contact_me_by=models.CharField(max_length=100,null=True)
     feedback=models.TextField()
 
