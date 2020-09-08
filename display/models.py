@@ -8,6 +8,7 @@ class Food(models.Model):
     isTraditional=models.BooleanField(default=False)
     promot=models.BooleanField(default=False)
     price=models.FloatField(default=0.0)
+    
 
 class Chief(models.Model):
     chief_name=models.CharField(max_length=100)
